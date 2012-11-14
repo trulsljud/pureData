@@ -1,0 +1,30 @@
+#N canvas 70 61 781 561 10;
+#X obj 201 188 soundswitch;
+#X obj 201 128 line~;
+#X obj 251 98 * 0.5;
+#X obj 251 128 delay;
+#X obj 201 18 inlet;
+#X obj 201 218 outlet~;
+#X obj 264 218 outlet~;
+#X obj 201 98 pack;
+#X obj 201 48 t f b;
+#X obj 243 18 r swapTime;
+#X obj 251 158 s newSwap;
+#X text 348 -23 Inlet: Range 0-1. At 0 first outlet~ is silent (0)
+and second outlet~ is full (1). When climbing up to 0.5 the first outlet~
+will climb to 1 while the second outlet~ will drop to 0 After inlet
+= 0.5 the reverse effect will occur: first goes silent and second goes
+full.;
+#X obj 228 68 24;
+#X connect 0 0 5 0;
+#X connect 0 1 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 10 0;
+#X connect 4 0 8 0;
+#X connect 7 0 1 0;
+#X connect 8 0 7 0;
+#X connect 8 1 12 0;
+#X connect 9 0 12 1;
+#X connect 12 0 7 1;
+#X connect 12 0 2 0;
